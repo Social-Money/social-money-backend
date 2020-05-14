@@ -46,7 +46,7 @@
     "node": ">=8.9.0"
   },
   "scripts": {
-    "start-daemon": "egg-scripts start --daemon --title=social-money-backend",
+    "start-daemon": "egg-scripts start --port=7009 --daemon --title=social-money-backend",
     "start": "egg-scripts start --title=social-money-backend",
     "stop": "egg-scripts stop --title=social-money-backend",
     "dev": "egg-bin dev",

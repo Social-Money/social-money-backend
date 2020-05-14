@@ -35,12 +35,12 @@ module.exports = appInfo => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
     credentials: true,
   };
-  config.cluster = {
+  /* config.cluster = {
     listen: {
       port: 7009,
       hostname: '0.0.0.0',
     },
-  };
+  }; */
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1555314751737_8431';
