@@ -5,7 +5,7 @@ RUN apk update && \
 RUN apk add --update python make g++\
    && rm -rf /var/cache/apk/*
 RUN mkdir -p /usr/src/app
-HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl -fs http://localhost:7009/ || exit 1
+HEALTHCHECK --interval=30s --timeout=3s --retries=3 CMD curl -fs http://localhost:7001/ || exit 1
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 
@@ -15,4 +15,4 @@ COPY . /usr/src/app
 
 # RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-EXPOSE 7009
+EXPOSE 7001

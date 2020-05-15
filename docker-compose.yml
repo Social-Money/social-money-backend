@@ -8,7 +8,7 @@ services:
     volumes:
       - /usr/local/socialmoney-beta/backend-config/config.local.js:/usr/src/app/config/config.default.js
     ports:
-      - 7009:7009
+      - 7009:7001
     networks:
       overlay:
   
@@ -20,7 +20,7 @@ services:
     volumes:
       - /usr/local/socialmoney-beta/backend-config/config.local.js:/usr/src/app/config/config.default.js
     ports:
-      - 7009:7009
+      - 7009:7001
     networks:
       overlay:
 
@@ -33,7 +33,7 @@ services:
     volumes:
       - /usr/local/socialmoney-beta/backend-config/config.local.js:/usr/src/app/config/config.default.js
     ports:
-      - 7009:7009
+      - 7009:7001
     networks:
       overlay:
 
