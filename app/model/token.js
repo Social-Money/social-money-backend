@@ -6,6 +6,7 @@ module.exports = app => {
 	const Model = app.model.define('token', {
 		id: {
 			type: DataTypes.INTEGER.UNSIGNED,
+			autoIncrement: true,
 			allowNull: false,
 			primaryKey: true
 		},
@@ -21,6 +22,10 @@ module.exports = app => {
 			type: DataTypes.INTEGER.UNSIGNED,
 			allowNull: false
 		},
+		total_supply: {
+			type: DataTypes.INTEGER.UNSIGNED,
+			allowNull: false
+		},
 		owner: {
 			type: DataTypes.STRING(100),
 			allowNull: true
@@ -28,6 +33,10 @@ module.exports = app => {
 		token_address: {
 			type: DataTypes.STRING(100),
 			allowNull: true
+		},
+		token_id: {
+			type: DataTypes.INTEGER.UNSIGNED,
+			allowNull: false
 		},
 		exchange_address: {
 			type: DataTypes.STRING(100),

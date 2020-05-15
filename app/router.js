@@ -27,4 +27,6 @@ module.exports = app => {
 
   router.get('/test', controller.test.list);
   router.resources('/token', controller.token);
+  router.post('/test/token/create', controller.token.create);
+  router.get('/exchange/list', controller.token.getExchangeList);
 };
