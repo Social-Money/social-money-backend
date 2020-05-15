@@ -1,55 +1,41 @@
 version: "2"
 services:
-
+  prod:
+    restart: always
+    build: .
+    hostname: "{{.Service.Name}}-{{.Task.Slot}}"
+    command: npm run serve
+    volumes:
+      - /usr/local/socialmoney-beta/backend-config/config.local.js:/usr/src/app/config/config.default.js
+    ports:
+      - 7009:7009
+    networks:
+      overlay:
+  
   test:
     restart: always
     build: .
     hostname: "{{.Service.Name}}-{{.Task.Slot}}"
-    # command: npm run serve
-    command: npm start
+    command: npm run dev
+    volumes:
+      - /usr/local/socialmoney-beta/backend-config/config.local.js:/usr/src/app/config/config.default.js
     ports:
-      - 7010:7010
+      - 7009:7009
     networks:
       overlay:
 
-  # app:
-  #   restart: always
-  #   build: .
-  #   hostname: "{{.Service.Name}}-{{.Task.Slot}}"
-  #   command: node app.js
-  #   volumes:
-  #     - ~/config.js://usr/src/app/config.js
-  #   ports:
-  #     - 7001:7001
-  #   networks:
-  #     overlay:
-  # steam_key_backend:
-  #   restart: always
-  #   build: .
-  #   hostname: "{{.Service.Name}}-{{.Task.Slot}}"
-  #   command: node steam_key_backend.js
-  #   volumes:
-  #     - ~/config.js://usr/src/app/config.js
-  #   ports:
-  #     - 3300:3000
-  #   networks:
-  #     overlay:
-  # mysql:
-  #   restart: always
-  #   image: mysql:5.7.21
-  #   hostname: "{{.Service.Name}}-{{.Task.Slot}}"
-  #   ports:
-  #     - 3306:3306
-  #   networks:
-  #     overlay:
-  #       aliases:
-  #         - mysql
-  #   environment:
-  #     - "MYSQL_ROOT_PASSWORD=root"
-  #   volumes:
-  #     - ~/mysql-data-volumes/mysql:/var/lib/mysql
+  local:
+    restart: always
+    build: .
+    hostname: "{{.Service.Name}}-{{.Task.Slot}}"
+    # command: npm run serve
+    command: npm run dev
+    volumes:
+      - /usr/local/socialmoney-beta/backend-config/config.local.js:/usr/src/app/config/config.default.js
+    ports:
+      - 7009:7009
+    networks:
+      overlay:
+
 networks:
   overlay:
-
-
-
