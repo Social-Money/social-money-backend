@@ -32,7 +32,7 @@ class TokenController extends Controller {
   }
   async getExchangeList() {
     const { ctx } = this;
-    const pageSize = parseInt(ctx.query.pageSize || 10);
+    const pageSize = parseInt(ctx.query.pageSize || 1000);
     const pageIndex = parseInt(ctx.query.pageIndex || 1);
     const offset = (pageIndex - 1) * pageSize;
     const list = await ctx.service.token.getExchangeList(offset, pageSize);
