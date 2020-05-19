@@ -68,7 +68,7 @@ class TokenService extends Service {
     });
     return result;
   }
-  erc20Instance(_address) {
+  /* erc20Instance(_address) {
     const web3 = this.app.web3;
     const instance = new web3.eth.Contract(SocialMoneyABI, _address);
     return instance;
@@ -84,7 +84,7 @@ class TokenService extends Service {
     return {
       totalSupply, name, symbol, decimals,
     };
-  }
+  } */
 }
 
 module.exports = TokenService;

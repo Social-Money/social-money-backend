@@ -46,6 +46,16 @@ module.exports = app => {
 			type: DataTypes.STRING(300),
 			allowNull: true
 		},
+		token_block_number: {
+			type: DataTypes.INTEGER.UNSIGNED,
+			allowNull: false,
+			defaultValue: '0'
+		},
+		exchange_block_number: {
+			type: DataTypes.INTEGER.UNSIGNED,
+			allowNull: false,
+			defaultValue: '0'
+		},
 		create_time: {
 			type: DataTypes.TIME,
 			allowNull: true,
