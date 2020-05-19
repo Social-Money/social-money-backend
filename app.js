@@ -1,7 +1,7 @@
 'use strict';
 
-const Web3 = require('web3');
-const { SocialMoneyFactoryABI, UniswapFactoryABI, SocialMoneyFactoryAddress, UniswapFactoryAddress, infuraKey } = require('./app/contract');
+/* const Web3 = require('web3');
+const { SocialMoneyFactoryABI, UniswapFactoryABI, SocialMoneyFactoryAddress, UniswapFactoryAddress, infuraKey } = require('./app/contract'); */
 
 class Bootstrapper {
 
@@ -11,10 +11,10 @@ class Bootstrapper {
 
   async didReady() {
     console.log('didReady....');
-    const ctx = await this.app.createAnonymousContext();
-    await this.loadWeb3(ctx);
+    /* const ctx = await this.app.createAnonymousContext();
+    await this.loadWeb3(ctx); */
   }
-  async loadWeb3(ctx) {
+  /* async loadWeb3(ctx) {
     const ApiEndpoint = `https://rinkeby.infura.io/v3/${infuraKey}`;
     const WssEndpoint = `wss://rinkeby.infura.io/ws/v3/${infuraKey}`;
     const HttpProvider = new Web3.providers.HttpProvider(ApiEndpoint);
@@ -49,7 +49,7 @@ class Bootstrapper {
       .on('error', error => {
         ctx.logger.error('app loadWeb3 event ProposalCreated: %j', error);
       });
-  }
+  } */
 
 }
 
